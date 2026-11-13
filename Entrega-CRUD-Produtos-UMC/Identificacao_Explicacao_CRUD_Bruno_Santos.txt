@@ -1,0 +1,62 @@
+UNIVERSIDADE DE MOGI DAS CRUZES (UMC)
+ATIVIDADE PRÁTICA — CRUD DE PRODUTOS
+
+Aluno: Bruno Santos
+RGM: 112521000895
+Tema: Produto
+
+1. OBJETIVO DO PROJETO
+
+O projeto consiste em um sistema web para gerenciamento de produtos. Ele permite cadastrar, listar, editar, pesquisar e excluir produtos, armazenando as informações em um banco de dados MySQL.
+
+2. TECNOLOGIAS UTILIZADAS
+
+- Java
+- Spring Boot
+- Maven
+- Spring MVC
+- Spring Data JPA / Hibernate
+- MySQL
+- Thymeleaf
+- HTML e CSS
+
+3. COMO O CÓDIGO FUNCIONA
+
+De forma simples, cada parte do projeto tem uma função:
+
+- Model (Produto): representa um produto e seus dados, como nome, preço e quantidade em estoque.
+- Repository: faz a comunicação com o banco de dados e consulta os produtos.
+- Service: organiza as operações e regras usadas pelo sistema.
+- Controller: recebe as ações feitas pelo usuário no navegador e direciona cada operação.
+- Templates (HTML/Thymeleaf): mostram as páginas de listagem e formulário.
+- CSS: define a aparência das páginas.
+
+Quando o usuário cadastra um produto, o formulário envia os dados ao Controller. O sistema encaminha a operação às outras camadas e o Repository, usando o JPA/Hibernate, grava os dados no MySQL. Na listagem, o sistema consulta o banco e apresenta os produtos na página.
+
+4. COMO EXECUTAR O PROJETO
+
+1. Iniciar o serviço MySQL pelo XAMPP.
+2. Criar no phpMyAdmin o banco de dados configurado no arquivo application.properties.
+3. Abrir no VS Code a pasta que contém o arquivo pom.xml.
+4. Abrir o terminal nessa pasta.
+5. Executar: mvn spring-boot:run
+6. Acessar no navegador: http://localhost:8080/produtos
+
+Observação: conferir as credenciais e o nome do banco em src/main/resources/application.properties. Não compartilhar senhas reais no repositório público.
+
+5. FUNCIONALIDADES DO CRUD
+
+- Create (Criar): cadastrar um produto.
+- Read (Ler): listar e consultar produtos.
+- Update (Atualizar): editar os dados de um produto.
+- Delete (Excluir): remover um produto.
+
+6. EVIDÊNCIAS DA ATIVIDADE
+
+As capturas de tela devem ser feitas no ambiente em que o projeto for executado. Recomenda-se registrar:
+- A listagem com pelo menos três produtos.
+- A tabela correspondente no phpMyAdmin.
+- O formulário de cadastro e a edição, se solicitados.
+- A estrutura do projeto no VS Code.
+
+Este documento identifica o trabalho e explica sua organização. Ele não substitui a execução do sistema nem comprova testes que ainda não tenham sido realizados.
