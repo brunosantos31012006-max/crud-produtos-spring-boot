@@ -1,0 +1,23 @@
+UMC — Universidade de Mogi das Cruzes
+Atividade Prática em Sala — CRUD com Spring Boot, JPA e MySQL
+
+Aluno: Bruno Santos
+RGM: 112521000895
+Tema escolhido: Produto
+
+RESUMO: COMO O SISTEMA FUNCIONA
+
+Este projeto é um sistema simples para organizar produtos. Nele, podemos cadastrar um produto, ver a lista de produtos, alterar as informações e excluir um produto.
+
+O sistema funciona em partes:
+- Model (Produto): representa os dados de cada produto, como nome, preço e quantidade em estoque.
+- Repository: é a parte que conversa com o banco de dados MySQL para guardar, procurar, alterar e apagar os produtos.
+- Service: organiza as operações do sistema e chama o Repository quando precisa acessar os dados.
+- Controller: recebe as ações feitas no navegador, como abrir a lista ou salvar um cadastro, e decide o que fazer.
+- Thymeleaf: mostra as páginas do sistema no navegador, incluindo a lista e o formulário de produtos.
+
+EXEMPLO SIMPLES
+
+Quando cadastramos um produto, preenchemos o formulário no navegador e clicamos em Salvar. O Controller recebe os dados, o Service organiza a operação e o Repository grava o produto no MySQL. Depois, o sistema volta para a lista e mostra o produto cadastrado.
+
+Em resumo: o navegador mostra as páginas, o Controller recebe as ações, o Service organiza o trabalho, o Repository acessa o banco e o MySQL guarda as informações.
