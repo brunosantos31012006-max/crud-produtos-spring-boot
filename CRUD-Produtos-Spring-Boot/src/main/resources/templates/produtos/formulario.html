@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo} + ' | Sistema CRUD'">Produto</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<header class="topo topo-menor">
+    <div class="container topo-conteudo">
+        <div>
+            <span class="marca">UMC • PROJETO PRÁTICO</span>
+            <h1 th:text="${titulo}">Produto</h1>
+            <p>Preencha os dados abaixo.</p>
+        </div>
+        <a class="botao botao-claro" th:href="@{/produtos}">Voltar à listagem</a>
+    </div>
+</header>
+
+<main class="container conteudo formulario-container">
+    <section class="painel">
+        <form th:action="@{/produtos/salvar}" th:object="${produto}" method="post" novalidate>
+            <input type="hidden" th:field="*{id}">
+
+            <div class="campo">
+                <label for="nome">Nome do produto</label>
+                <input id="nome" type="text" th:field="*{nome}" placeholder="Ex.: Teclado Gamer" maxlength="100">
+                <small class="erro" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></small>
+            </div>
+
+            <div class="campo">
+                <label for="preco">Preço (R$)</label>
+                <input id="preco" type="number" th:field="*{preco}" min="0.01" step="0.01" placeholder="Ex.: 159.90">
+                <small class="erro" th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></small>
+            </div>
+
+            <div class="campo">
+                <label for="estoque">Quantidade em estoque</label>
+                <input id="estoque" type="number" th:field="*{estoque}" min="0" step="1" placeholder="Ex.: 20">
+                <small class="erro" th:if="${#fields.hasErrors('estoque')}" th:errors="*{estoque}"></small>
+            </div>
+
+            <div class="acoes-form">
+                <a class="botao botao-secundario" th:href="@{/produtos}">Cancelar</a>
+                <button class="botao botao-principal" type="submit">Salvar produto</button>
+            </div>
+        </form>
+    </section>
+</main>
+</body>
+</html>
